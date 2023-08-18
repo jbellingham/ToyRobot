@@ -1,6 +1,3 @@
-using System;
-using ToyRobot.Commands;
-
 namespace ToyRobot
 {
     public class Robot

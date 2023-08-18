@@ -1,5 +1,4 @@
-﻿using System;
-using ToyRobot.Commands;
+﻿using ToyRobot.Commands;
 
 namespace ToyRobot
 {

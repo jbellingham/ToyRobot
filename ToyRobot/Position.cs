@@ -44,28 +44,20 @@ namespace ToyRobot
             {
                 var firstFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().First();
                 var lastFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().Last();
-                if (command is Right)
+                switch (command)
                 {
-                    if (Facing == lastFacing)
-                    {
+                    case Right when Facing == lastFacing:
                         Facing = firstFacing;
-                    }
-                    else
-                    {
+                        break;
+                    case Right:
                         Facing += 1;
-                    }
-                }
-
-                if (command is Left)
-                {
-                    if (Facing == firstFacing)
-                    {
+                        break;
+                    case Left when Facing == firstFacing:
                         Facing = lastFacing;
-                    }
-                    else
-                    {
+                        break;
+                    case Left:
                         Facing -= 1;
-                    }
+                        break;
                 }
             }
         }

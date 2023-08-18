@@ -2,7 +2,7 @@ namespace ToyRobot.Commands
 {
     public class Left : ICommand
     {
-        private Robot _robot;
+        private readonly Robot _robot;
 
         public Left(Robot robot)
         {

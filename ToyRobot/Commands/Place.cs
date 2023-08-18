@@ -2,8 +2,8 @@ namespace ToyRobot.Commands
 {
     public class Place : ICommand
     {
-        private Board _board;
-        private Position _position;
+        private readonly Board _board;
+        private readonly Position _position;
         
         public Place(Board board, Position position)
         {
@@ -13,10 +13,13 @@ namespace ToyRobot.Commands
 
         public void Execute()
         {
-            _board.PlaceAtPosition(_position);
+            if (CanExecute())
+            {
+                _board.PlaceAtPosition(_position);
+            }
         }
 
-        public bool CanExecute()
+        private static bool CanExecute()
         {
             return true;
         }

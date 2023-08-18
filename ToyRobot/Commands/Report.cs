@@ -4,7 +4,7 @@ namespace ToyRobot.Commands;
 
 public class Report : ICommand
 {
-    private Robot _robot;
+    private readonly Robot _robot;
 
     public Report(Robot robot)
     {
@@ -13,7 +13,10 @@ public class Report : ICommand
 
     public void Execute()
     {
-        Console.WriteLine($"{_robot.Position.X},{_robot.Position.Y},{_robot.Position.Facing.ToString()}");
+        if (CanExecute())
+        {
+            Console.WriteLine($"{_robot.Position.X},{_robot.Position.Y},{_robot.Position.Facing.ToString()}");
+        }
     }
 
     public bool CanExecute()

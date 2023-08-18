@@ -4,8 +4,8 @@ namespace ToyRobot.Commands
 {
     public class Move : ICommand
     {
-        private Board _board;
-        private Robot _robot;
+        private readonly Board _board;
+        private readonly Robot _robot;
 
         public Move(Board board, Robot robot)
         {
