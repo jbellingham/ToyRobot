@@ -57,5 +57,18 @@ namespace ToyRobot.Tests
 
             robot.Position.Should().BeEquivalentTo(initialPosition);
         }
+
+        [Fact]
+        public void RobotCanBePlacedWithinBoardsBounds()
+        {
+            var robot = new Robot();
+            var board = new Board(robot, 5);
+            var validPosition = new Position(Facing.East, 3, 3);
+            var placeCommand = new Place(board, validPosition);
+            
+            placeCommand.Execute();
+
+            robot.Position.Should().BeEquivalentTo(validPosition);
+        }
     }
 }
