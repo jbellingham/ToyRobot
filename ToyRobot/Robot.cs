@@ -21,10 +21,6 @@ namespace ToyRobot
         public void UpdatePosition(Position position)
         {
             Position = position;
-            Console.WriteLine($"New position is:" +
-                              $"\nX: {Position.X}" +
-                              $"\nY: {Position.Y}" +
-                              $"\nFacing: {Position.Facing}");
         }
 
         public Position Move()
