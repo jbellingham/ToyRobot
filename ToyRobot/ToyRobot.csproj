@@ -10,4 +10,16 @@
       <PackageReference Include="FluentAssertions" Version="6.11.0" />
     </ItemGroup>
 
+
+
+
+    <ItemGroup>
+      <None Update="input\in.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="input\in2.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
