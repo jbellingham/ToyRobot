@@ -56,10 +56,17 @@ namespace ToyRobot
                     }
                 }
 
-                // if (command is Left)
-                // {
-                //     Facing -= 1;
-                // }
+                if (command is Left)
+                {
+                    if (Facing == firstFacing)
+                    {
+                        Facing = lastFacing;
+                    }
+                    else
+                    {
+                        Facing -= 1;
+                    }
+                }
             }
         }
 
