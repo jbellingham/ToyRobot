@@ -19,5 +19,17 @@ namespace ToyRobot.Tests
 
             robot.Position.Facing.Should().Be(expected);
         }
+
+        [Fact]
+        public void RightCommand_DoesNotChangeRobotsXYPositionOnTheBoard()
+        {
+            var position = new Position(Facing.East, 3, 3);
+            var robot = new Robot(position);
+            var rightCommand = new Right(robot);
+            rightCommand.Execute();
+
+            robot.Position.X.Should().Be(position.X);
+            robot.Position.Y.Should().Be(position.Y);
+        }
     }
 }
