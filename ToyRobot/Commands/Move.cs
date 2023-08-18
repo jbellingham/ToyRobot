@@ -18,7 +18,11 @@ namespace ToyRobot.Commands
             if (CanExecute())
             {
                 var newPosition = _robot.Move();
-                _board.PlaceAtPosition(newPosition);
+                var moved = _board.PlaceAtPosition(newPosition);
+                if (!moved)
+                {
+                    Console.WriteLine($"Attempted to move to {newPosition.X}, {newPosition.Y} - but board size is {_board.Size}");
+                }
             }
             else
             {

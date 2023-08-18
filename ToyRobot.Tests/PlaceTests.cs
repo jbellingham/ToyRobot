@@ -7,7 +7,7 @@ namespace ToyRobot.Tests
     public class PlaceTests
     {
         [Fact]
-        public void RobotCannotBePlacedAboveVerticalBounds()
+        public void PlaceCommand_WillNotPlaceRobotAboveVerticalBounds()
         {
             var robot = new Robot();
             var board = new Board(robot, 5);
@@ -20,7 +20,7 @@ namespace ToyRobot.Tests
         }
         
         [Fact]
-        public void RobotCannotBePlacedBelowVerticalBounds()
+        public void PlaceCommand_WillNotPlaceRobotBelowVerticalBounds()
         {
             var robot = new Robot();
             var board = new Board(robot, 5);
@@ -33,7 +33,7 @@ namespace ToyRobot.Tests
         }
         
         [Fact]
-        public void RobotCannotBePlacedAboveHorizontalBounds()
+        public void PlaceCommand_WillNotPlaceRobotAboveHorizontalBounds()
         {
             var robot = new Robot();
             var board = new Board(robot, 5);
@@ -46,7 +46,7 @@ namespace ToyRobot.Tests
         }
         
         [Fact]
-        public void RobotCannotBePlacedBelowHorizontalBounds()
+        public void PlaceCommand_WillNotPlaceRobotBelowHorizontalBounds()
         {
             var robot = new Robot();
             var board = new Board(robot, 5);
@@ -59,7 +59,7 @@ namespace ToyRobot.Tests
         }
 
         [Fact]
-        public void RobotCanBePlacedWithinBoardsBounds()
+        public void PlaceCommand_WillPlaceRobotWithinBoardsBounds()
         {
             var robot = new Robot();
             var board = new Board(robot, 5);

@@ -1,3 +1,5 @@
+using System;
+
 namespace ToyRobot.Commands
 {
     public class Place : ICommand
@@ -15,7 +17,11 @@ namespace ToyRobot.Commands
         {
             if (CanExecute())
             {
-                _board.PlaceAtPosition(_position);
+                var placed = _board.PlaceAtPosition(_position);
+                if (!placed)
+                {
+                    Console.WriteLine($"Attempted to place at {_position.X}, {_position.Y} - but board size is {_board.Size}");
+                }
             }
         }
 
