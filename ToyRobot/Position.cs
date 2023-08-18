@@ -1,3 +1,7 @@
+using System;
+using System.Linq;
+using ToyRobot.Commands;
+
 namespace ToyRobot
 {
         public class Position
@@ -35,13 +39,35 @@ namespace ToyRobot
                 // not sure about this
                 return this;
             }
+
+            public void UpdateFacing(ICommand command)
+            {
+                var firstFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().First();
+                var lastFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().Last();
+                if (command is Right)
+                {
+                    if (Facing == lastFacing)
+                    {
+                        Facing = firstFacing;
+                    }
+                    else
+                    {
+                        Facing += 1;
+                    }
+                }
+
+                // if (command is Left)
+                // {
+                //     Facing -= 1;
+                // }
+            }
         }
 
         public enum Facing
         {
             North,
-            South,
             East,
+            South,
             West
         }
 }
