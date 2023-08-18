@@ -7,9 +7,9 @@ namespace ToyRobot
     {
         static void Main(string[] args)
         {
-            var robot = new Robot(new Position(Facing.East, 2, 3));
+            var robot = new Robot();
             var board = new Board(robot);
-            ICommand command = new Place(board, robot);
+            ICommand command = new Place(board, new Position(Facing.East, 3, 3));
             command.Execute();
 
             command = new Move(board, robot);

@@ -1,3 +1,5 @@
+using System;
+
 namespace ToyRobot.Commands
 {
     public class Move : ICommand
@@ -11,10 +13,22 @@ namespace ToyRobot.Commands
             _robot = robot;
         }
 
-        public bool Execute()
+        public void Execute()
         {
-            var newPosition = _robot.Move();
-            return _board.PlaceAtPosition(newPosition);
+            if (CanExecute())
+            {
+                var newPosition = _robot.Move();
+                _board.PlaceAtPosition(newPosition);
+            }
+            else
+            {
+                Console.WriteLine("Couldn't execute MOVE command - robot has not been placed yet.");
+            }
+        }
+
+        public bool CanExecute()
+        {
+            return _robot.IsPlaced;
         }
     }
 }

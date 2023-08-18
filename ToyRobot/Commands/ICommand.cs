@@ -2,6 +2,7 @@ namespace ToyRobot.Commands
 {
     public interface ICommand
     {
-        bool Execute();
+        void Execute();
+        bool CanExecute();
     }
 }
