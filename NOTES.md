@@ -32,6 +32,7 @@
 - Commands are abstracted into their own class implementing an interface - we can easily extend behavior by adding new command classes or replacing existing ones
   - Would be good if we didn't have to add to the switch statement in `Program.cs` for new commands - maybe some kind of strategy pattern?
 - Commands expose a single public interface to the world - their `Execute()` method. Dependencies are constructor injected, so there is basically no ambiguity in how to interact with these classes.
+- Position.MovePosition returns a new position, instead of doing object mutation - functional programming principles 
 
 ### Tests
 - Tests are unaware of implementation (i.e. we can change the way commands behave under the hood and the tests won't just break straight away - we can refactor knowing that our tests will tell us if we've broken behaviour)
