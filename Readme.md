@@ -17,3 +17,8 @@
 - Error messaging is inline - probably could separate out (maybe a command's `Execute` method has a return type that contains possible error messages?)
 - Can I make board size private somehow?
 - Add more comments - particularly around position facing
+
+## Things I like
+
+### Implementation
+- Commands are abstracted into their own class implementing an interface - we can easily extend behavior by adding new command classes or replacing existing ones
