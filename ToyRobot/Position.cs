@@ -42,6 +42,7 @@ namespace ToyRobot
 
             public void UpdateFacing(ICommand command)
             {
+                // this little thingo assumes that the facing enum values stay in clockwise order
                 var firstFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().First();
                 var lastFacing = Enum.GetValues(typeof(Facing)).Cast<Facing>().Last();
                 switch (command)
