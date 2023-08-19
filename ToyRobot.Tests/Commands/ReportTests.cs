@@ -4,7 +4,7 @@ using FluentAssertions;
 using ToyRobot.Commands;
 using Xunit;
 
-namespace ToyRobot.Tests;
+namespace ToyRobot.Tests.Commands;
 
 public class ReportTests
 {
