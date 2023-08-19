@@ -29,6 +29,11 @@ There are example input files in the repo at the above location.
 - From project root, run `dotnet test`
   - See `Things to improve - Testing` in `Notes.md` for a known bug while running tests from the command line
 
+## Navigating the code
+The entrypoint of the program is `Program.cs`. As mentioned above, the robot is controlled by writing commands into a document `/ToyRobot/input/in.txt`.
+
+Implementation of commands is deferred to classes under `/Commands`, all of which implement the `ICommand` interface exposing one public method - `Execute()`.
+
 ## My thoughts
 I have written up a bunch of my own thoughts about how I implemented this code challenge.
 They can be found in `Notes.md`.
