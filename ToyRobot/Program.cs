@@ -12,15 +12,15 @@ namespace ToyRobot
             var robot = new Robot();
             var board = new Board(robot);
 
-            var lines = File.ReadLines("input/in2.txt");
+            var lines = File.ReadLines("input/in.txt");
             foreach (var line in lines)
             {
                 var split = line.Split(' ');
-                var commandString = split[0];
+                var commandString = split[0].ToLower();
                 ICommand command;
                 switch (commandString)
                 {
-                    case "PLACE":
+                    case "place":
                         TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
                         var positionSplit = split[1].Split(',');
                         var facingString = textInfo.ToTitleCase(positionSplit[2].ToLower());
@@ -32,16 +32,16 @@ namespace ToyRobot
                                 Int32.Parse(positionSplit[0]),
                                 Int32.Parse(positionSplit[1])));
                         break;
-                    case "MOVE":
+                    case "move":
                         command = new Move(board, robot);
                         break;
-                    case "LEFT":
+                    case "left":
                         command = new Left(robot);
                         break;
-                    case "RIGHT":
+                    case "right":
                         command = new Right(robot);
                         break;
-                    case "REPORT":
+                    case "report":
                         command = new Report(robot);
                         break;
                     default:
