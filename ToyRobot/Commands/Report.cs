@@ -19,7 +19,7 @@ public class Report : ICommand
         }
     }
 
-    public bool CanExecute()
+    private bool CanExecute()
     {
         return _robot.IsPlaced;
     }

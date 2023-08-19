@@ -19,7 +19,7 @@ namespace ToyRobot.Commands
             }
         }
 
-        public bool CanExecute()
+        private bool CanExecute()
         {
             return _robot.IsPlaced;
         }
