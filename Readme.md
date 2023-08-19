@@ -1,24 +1,34 @@
-## Things to improve
+# ToyRobot
 
-### Behaviour
-- When an invalid place command occurs, it is just ignored, with no indication to the user of why
-- Output from failed placement is confusing (tile index starting at zero so it says cannot place at position 5, 5 for a board size of 5 for example)
+ToyRobot is an interactive virtual toy robot that can be moved around a 5x5 grid by issuing commands.
 
-### Testing
-- Boundary testing (e.g. more extensive testing of place command - can we definitely not place the robot outside of the 5x5 grid?)
-- Add testing of file input parsing
-- Colocated test files (e.g. LeftTests.cs in the same directory as Left.cs -- kindof a pain to do in .Net because reasons)
-- Mutation testing - are our tests testing what we think they're testing?
+## Environment setup
 
-### Implementation
-- Possibly excessive repetition and nesting of `CanExecute()` method
-- Law of demeter violations around robot position
-- File reading and command parsing is gross, error prone, not extensible...
-- Error messaging is inline - probably could separate out (maybe a command's `Execute` method has a return type that contains possible error messages?)
-- Can I make board size private somehow?
-- Add more comments - particularly around position facing
+- Download and install the latest .Net 7 SDK from [here](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
+  - Ensure dotnet executable or binary is available on you system's path
+- Clone the ToyRobot from [here](https://github.com/jbellingham/ToyRobot).
 
-## Things I like
+## Toy robot setup
 
-### Implementation
-- Commands are abstracted into their own class implementing an interface - we can easily extend behavior by adding new command classes or replacing existing ones
+The toy robot can be instructed to move about the grid with the following commands:
+- PLACE X,Y,F
+  - Where X and Y are integers from 0-4, and F is a facing (North, East, South, or West)
+- MOVE
+- LEFT
+- RIGHT
+- REPORT
+
+To issue commands, the program is set up to receive a text file `ToyRobot/input/in.txt` with one command per line - capitalisation of commands does not matter.
+There are example input files in the repo at the above location.
+
+## Running Toy robot
+- From project root, run `dotnet build`
+- cd into `/ToyRobot` and then run `dotnet run`
+
+## Running tests
+- From project root, run `dotnet test`
+  - See `Things to improve - Testing` in `Notes.md` for a known bug while running tests from the command line
+
+## My thoughts
+I have written up a bunch of my own thoughts about how I implemented this code challenge.
+They can be found in `Notes.md`.
