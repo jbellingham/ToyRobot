@@ -1,4 +1,4 @@
-﻿## Things to improve
+## Things to improve
 
 ### Behaviour
 - When an invalid place command occurs, it is just ignored, with no indication to the user of why
@@ -23,6 +23,9 @@
 - Things like xy coordinates just represented by integers can easily get orders mixed up, e.g. putting a "y" where an "x" value is expected
   - "Tiny types" - things like the example above can be represented by a type e.g. `Coordinate` - they describe a real life concept and a domain concept and they have rules e.g. a valid coordinate must have both x and y values. We can easily capture these rules in a type
 - `UpdateFacing()` for the left and right commands assumes that the `Facing` enum values will be in clockwise order
+- Fix naming of some things like in Position.UpdatePosition()
+- Robot.Move() is a bit confusingly named
+
 ## Things I like
 
 ### Implementation
