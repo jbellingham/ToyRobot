@@ -48,8 +48,8 @@ class Program
                     board,
                     new Position(
                         Enum.Parse<Facing>(facingString),
-                        Int32.Parse(positionSplit[0]),
-                        Int32.Parse(positionSplit[1])));
+                            int.Parse(positionSplit[0]),
+                            int.Parse(positionSplit[1])));
                 break;
             case nameof(Move):
                 command = new Move(board, robot);
