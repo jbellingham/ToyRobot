@@ -17,27 +17,20 @@ namespace ToyRobot
                 Y = y;
             }
 
-            public Position MovePosition()
+            public Position GetNextPositionInCurrentFacing()
             {
-                if (Facing == Facing.North)
+                return Facing switch
                 {
-                    return new Position(Facing, X, Y + 1);
-                }
-                if (Facing == Facing.East)
-                {
-                    return new Position(Facing, X + 1, Y);
-                }
-                if (Facing == Facing.South)
-                {
-                    return new Position(Facing, X, Y - 1);
-                }
-                if (Facing == Facing.West)
-                {
-                    return new Position(Facing, X - 1, Y);
-                }
-
-                // not sure about this
-                return this;
+                    Facing.North => new Position(Facing, X, Y + 1),
+                    Facing.East => new Position(Facing, X + 1, Y),
+                    Facing.South => new Position(Facing, X, Y - 1),
+                    Facing.West => new Position(Facing, X - 1, Y),
+                    _ => this
+                    // not sure about this ^.
+                    // With the current implementation, there's not really a way to get here...
+                    // We parse out the facing from the command input, and if we can't parse it will just blow up haha...
+                    // Still probably unexpected behaviour here if that underlying parsing mechanism ever changed.
+                };
             }
 
             public void UpdateFacing(ICommand command)
