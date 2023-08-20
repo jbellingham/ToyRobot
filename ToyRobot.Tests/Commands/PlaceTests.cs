@@ -20,7 +20,7 @@ public class PlaceTests
             
         placeCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -35,7 +35,7 @@ public class PlaceTests
             
         placeCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -48,7 +48,7 @@ public class PlaceTests
             
         placeCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -63,7 +63,7 @@ public class PlaceTests
             
         placeCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
 
     [Fact]
@@ -76,6 +76,6 @@ public class PlaceTests
             
         placeCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(validPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(validPosition);
     }
 }

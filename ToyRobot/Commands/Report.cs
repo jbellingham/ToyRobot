@@ -15,7 +15,8 @@ public class Report : ICommand
     {
         if (CanExecute())
         {
-            Console.WriteLine($"{_robot.Position.X},{_robot.Position.Y},{_robot.Position.Facing.ToString()}");
+            var currentPosition = _robot.GetCurrentPosition();
+            Console.WriteLine($"{currentPosition.X},{currentPosition.Y},{currentPosition.Facing.ToString()}");
         }
     }
 

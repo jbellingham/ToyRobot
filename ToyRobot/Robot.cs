@@ -1,33 +1,40 @@
+using ToyRobot.Commands;
+
 namespace ToyRobot
 {
     public class Robot
     {
-        public Position Position;
-        public bool IsPlaced => Position.X >= 0 && Position.Y >= 0;
+        private Position _position;
+        public bool IsPlaced => _position.X >= 0 && _position.Y >= 0;
 
         public Robot(Position position)
         {
-            Position = position;
+            _position = position;
         }
 
         public Robot()
         {
-            Position = new Position(Facing.East, -1, -1);
+            _position = new Position(Facing.East, -1, -1);
         }
         
         public void UpdatePosition(Position position)
         {
-            Position = position;
+            _position = position;
         }
 
-        public Position Move()
+        public Position GetNextPositionInCurrentFacing()
         {
-            return Position.MovePosition();
+            return _position.GetNextPositionInCurrentFacing();
+        }
+
+        public void UpdateFacing(ICommand command)
+        {
+            _position.UpdateFacing(command);
         }
 
         public Position GetCurrentPosition()
         {
-            return new Position(Position.Facing, Position.X, Position.Y);
+            return new Position(_position.Facing, _position.X, _position.Y);
         }
     }
 }

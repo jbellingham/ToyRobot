@@ -17,7 +17,7 @@ namespace ToyRobot.Commands
         {
             if (CanExecute())
             {
-                var newPosition = _robot.Move();
+                var newPosition = _robot.GetNextPositionInCurrentFacing();
                 var moved = _board.PlaceAtPosition(newPosition);
                 if (!moved)
                 {

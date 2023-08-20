@@ -15,7 +15,6 @@
 
 ### Implementation
 - Possibly excessive repetition and nesting of `CanExecute()` method
-- Law of demeter violations around robot position
 - File reading and command parsing is gross, error prone, not extensible...
 - Error messaging is inline - probably could separate out (maybe a command's `Execute` method has a return type that contains possible error messages?)
   - Logging via the console is pretty well baked in - would be good to abstract this so that we can inject different loggers and log elsewhere e.g. SumoLogic, Datadog
@@ -25,8 +24,8 @@
   - "Tiny types" - things like the example above can be represented by a type e.g. `Coordinate` - they describe a real life concept and a domain concept and they have rules e.g. a valid coordinate must have both x and y values. We can easily capture these rules in a type
 - `UpdateFacing()` for the left and right commands assumes that the `Facing` enum values will be in clockwise order
 - Fix naming of some things like in `Position.UpdatePosition()`
-- `Robot.Move()` is a bit confusingly named
-
+- Object mutation around robot position when position is updated
+  - Replace the existing robot on the board with a new robot in the new position?
 
 ## Things I like
 
@@ -36,6 +35,7 @@
 - Commands expose a single public interface to the world - their `Execute()` method. Dependencies are constructor injected, so there is basically no ambiguity in how to interact with these classes.
 - Position.MovePosition returns a new position, instead of doing object mutation - functional programming principles 
 - `Main()` in `Program.cs` ended up being pretty tidy, it's fairly clear what it's doing - reading in lines from the input file, interpreting them as commands and then executing the commands. All command behavior is abstracted away into the command classes, and the behavior to parse commands - while not the nicest - is still relatively clear, _and_ it is extracted into a private method
+- Attempts made to limit law of demeter violations
 
 ### Tests
 - Tests are unaware of implementation (i.e. we can change the way commands behave under the hood and the tests won't just break straight away - we can refactor knowing that our tests will tell us if we've broken behaviour)

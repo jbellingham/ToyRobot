@@ -19,7 +19,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
 
     [Fact]
@@ -31,7 +31,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(new Position(Facing.North, initialPosition.X, initialPosition.Y + 1));
+        robot.GetCurrentPosition().Should().BeEquivalentTo(new Position(Facing.North, initialPosition.X, initialPosition.Y + 1));
     }
         
     [Fact]
@@ -43,7 +43,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(new Position(Facing.South, initialPosition.X, initialPosition.Y -1));
+        robot.GetCurrentPosition().Should().BeEquivalentTo(new Position(Facing.South, initialPosition.X, initialPosition.Y -1));
     }
         
     [Fact]
@@ -55,7 +55,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(new Position(Facing.East, initialPosition.X + 1, initialPosition.Y));
+        robot.GetCurrentPosition().Should().BeEquivalentTo(new Position(Facing.East, initialPosition.X + 1, initialPosition.Y));
     }
         
     [Fact]
@@ -67,7 +67,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(new Position(Facing.West, initialPosition.X - 1, initialPosition.Y));
+        robot.GetCurrentPosition().Should().BeEquivalentTo(new Position(Facing.West, initialPosition.X - 1, initialPosition.Y));
     }
 
     [Fact]
@@ -81,7 +81,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -95,7 +95,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -109,7 +109,7 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
         
     [Fact]
@@ -123,6 +123,6 @@ public class MoveTests
         var moveCommand = new Move(board, robot);
         moveCommand.Execute();
 
-        robot.Position.Should().BeEquivalentTo(initialPosition);
+        robot.GetCurrentPosition().Should().BeEquivalentTo(initialPosition);
     }
 }

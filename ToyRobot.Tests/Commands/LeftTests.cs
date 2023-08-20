@@ -17,7 +17,7 @@ public class LeftTests
         var leftCommand = new Left(robot);
         leftCommand.Execute();
 
-        robot.Position.Facing.Should().Be(expected);
+        robot.GetCurrentPosition().Facing.Should().Be(expected);
     }
         
     [Fact]
@@ -28,7 +28,7 @@ public class LeftTests
         var rightCommand = new Left(robot);
         rightCommand.Execute();
 
-        robot.Position.X.Should().Be(position.X);
-        robot.Position.Y.Should().Be(position.Y);
+        robot.GetCurrentPosition().X.Should().Be(position.X);
+        robot.GetCurrentPosition().Y.Should().Be(position.Y);
     }
 }

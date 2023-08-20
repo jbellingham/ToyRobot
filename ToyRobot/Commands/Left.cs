@@ -13,9 +13,7 @@ namespace ToyRobot.Commands
         {
             if (CanExecute())
             {
-                // law of demeter violation
-                // come back to this
-                _robot.Position.UpdateFacing(this);
+                _robot.UpdateFacing(this);
             }
         }
 
