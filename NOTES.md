@@ -57,6 +57,7 @@ Each command specified in the requirements becomes one command class - extending
 Board and Robot are our two main **domain concepts**. Position is a secondary domain concept - `Robot` can have a `Position`, and the `Board` is _aware_ of positions in so far as a position's XY coordinates refer to a tile on the board.
 
 A position object is passed to the `Board` methods `PlaceAtPosition()` and `CanPlaceAtPosition()`. Board is only asking questions about a position, whereas the robot is actively changing the position it owns. Seems like there is a better entity structure somewhere in here...
+I didn't spend _loads_ of time thinking about exactly where the methods on the few domain classes should go. They made some sense at the time, but in hindsight feel off.
 
 **Board size** is specified as 5 in the challenge doc - so I've made 5 the default size. We can increase the size to whatever we want without any issue. All of the behaviour relating to size works correctly whether we leave it at 5, or if we specify say 20.
 
