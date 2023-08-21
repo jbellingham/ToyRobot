@@ -37,7 +37,7 @@ Run in docker on the host machine:
 
 
 ## Running tests
-- From project root, run `dotnet test` ** (needs dotnet runtime on the host machine)
+- From project root, run `dotnet test` (needs dotnet runtime on the host machine)
   - See `Things to improve - Testing` in `Notes.md` for a known bug while running tests from the command line
 
 ## Navigating the code
