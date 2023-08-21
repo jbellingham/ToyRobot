@@ -47,4 +47,4 @@ Implementation of commands is deferred to classes under `/Commands`, all of whic
 
 ## My thoughts
 I have written up a bunch of my own thoughts about how I implemented this code challenge.
-They can be found in `Notes.md`.
+They can be found in [Notes.md](https://github.com/jbellingham/ToyRobot/blob/49742d51c5323291c76ac3c6952414cf2632da06/NOTES.md.).
