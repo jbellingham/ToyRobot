@@ -40,8 +40,14 @@
 ### Tests
 - Tests are unaware of implementation (i.e. we can change the way commands behave under the hood and the tests won't just break straight away - we can refactor knowing that our tests will tell us if we've broken behaviour)
 
-
 ## Thought process
+
+### Testing
+I am a fan of TDD, but I did not strictly follow it. I'm still relatively new to it and find it slows me down more than I'd like when building a new service from nothing.
+
+If I was less time-constrained, I would probably make more of an effort to apply TDD upfront.
+
+I did test-drive some of the later implementation - I think the `Right` and `Left` commands for example.
 
 ### Architecture
 `Main()` kept intentionally simple - read in the lines from the input file, parse, then execute. Method names are kept clear so that if you need to dive in any given part of the process its (hopefully) not hard to figure out where to go.
