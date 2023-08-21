@@ -18,6 +18,10 @@ public class Report : ICommand
             var currentPosition = _robot.GetCurrentPosition();
             Console.WriteLine($"{currentPosition.X},{currentPosition.Y},{currentPosition.Facing.ToString()}");
         }
+        else
+        {
+            Console.WriteLine("Couldn't execute REPORT command - robot has not been placed yet.");
+        }
     }
 
     private bool CanExecute()

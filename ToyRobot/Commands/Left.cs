@@ -1,3 +1,5 @@
+using System;
+
 namespace ToyRobot.Commands
 {
     public class Left : ICommand
@@ -14,6 +16,10 @@ namespace ToyRobot.Commands
             if (CanExecute())
             {
                 _robot.UpdateFacing(this);
+            }
+            else
+            {
+                Console.WriteLine("Couldn't execute LEFT command - robot has not been placed yet.");
             }
         }
 
